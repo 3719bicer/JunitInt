@@ -31,14 +31,18 @@ public class C03_handleWindow {
     }
     @Test
     public void windowTesti() throws InterruptedException {
+
         //● Amazon anasayfa adresine gidin.
         driver.get("https://www.amazon.com");
+
         //● Sayfa’nin window handle degerini String bir degiskene atayin
         String ilkSayfaHandleDegeri= driver.getWindowHandle();
+
         //● Sayfa title’nin “Amazon” icerdigini test edin
         String expectedIcerik="Amazon";
         String actualTitle= driver.getTitle();
         Assert.assertTrue(actualTitle.contains(expectedIcerik));
+
         //● Yeni bir tab olusturup, acilan tab’da wisequarter.com adresine gidin
         /*
           driver.switchTo().newWindow() method'u ile yeni bir sayfa olusturup
@@ -48,12 +52,15 @@ public class C03_handleWindow {
          */
         driver.switchTo().newWindow(WindowType.TAB);
         driver.get("https://www.wisequarter.com");
+
         //● Sayfa title’nin “Wise Quarter” icerdigini test edin
         expectedIcerik="Wise Quarter";
         actualTitle= driver.getTitle();
         Assert.assertTrue(actualTitle.contains(expectedIcerik));
+
         //● Yeni bir window olusturup, acilan sayfada walmart.com adresine gidin
         driver.switchTo().newWindow(WindowType.WINDOW).get("https://www.walmart.com");
+
         //● Sayfa title’nin “Walmart” icerdigini test edin
         Thread.sleep(5000);
         expectedIcerik="Walmart";

@@ -1,4 +1,4 @@
-package Automation_Exercises;
+package automation_Exercises;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
@@ -72,8 +72,7 @@ public class Ex_01 {
         select2.selectByValue("2000");
 
         //10. Select checkbox 'Sign up for our newsletter!'
-        WebElement signUpDugmesi=driver.findElement(By.xpath("//input[@id='newsletter']"));
-        signUpDugmesi.click();
+        driver.findElement(By.xpath("//input[@id='newsletter']")).click();
 
         // 11. Select checkbox 'Receive special offers from our partners!'
         driver.findElement(By.xpath("//input[@id='optin']")).click();
@@ -81,31 +80,32 @@ public class Ex_01 {
         // 12. Fill details: First name, Last name, Company,
         // Address, Address2, Country, State, City, Zipcode, Mobile Number
         WebElement firstName= driver.findElement(By.xpath("//input[@id='first_name']"));
-        passwordElementi.sendKeys("mehmet" + Keys.ENTER);
+        firstName.sendKeys(Keys.PAGE_DOWN);
+        firstName.sendKeys("mehmet" + Keys.ENTER);
 
         WebElement lastName= driver.findElement(By.xpath("//input[@id='last_name']"));
-        passwordElementi.sendKeys("ali" + Keys.ENTER);
+        lastName.sendKeys("ali" + Keys.ENTER);
 
         WebElement company= driver.findElement(By.xpath("//input[@id='company']"));
-        passwordElementi.sendKeys("Wise Quarter" + Keys.ENTER);
+        company.sendKeys("Wise Quarter" + Keys.ENTER);
 
         WebElement address= driver.findElement(By.xpath("//input[@id='address1']"));
-        passwordElementi.sendKeys("123 Royal Street, LA 38070, USA  " + Keys.ENTER);
+        address.sendKeys("123 Royal Street, LA 38070, USA  " + Keys.ENTER);
 
         WebElement address2= driver.findElement(By.xpath("//input[@id='address2']"));
-        passwordElementi.sendKeys("New Orleans USA" + Keys.ENTER);
+        address2.sendKeys("New Orleans USA" + Keys.ENTER);
 
         WebElement selectCountryRadioButton=driver.findElement(By.xpath("//option[@value='United States']"));
         select.selectByValue("United States");
 
         WebElement state= driver.findElement(By.xpath("//input[@id='last_name']"));
-        passwordElementi.sendKeys("ali" + Keys.ENTER);
+        state.sendKeys("ali" + Keys.ENTER);
         WebElement city= driver.findElement(By.xpath("//input[@id='last_name']"));
-        passwordElementi.sendKeys("ali" + Keys.ENTER);
-        WebElement Zipcode= driver.findElement(By.xpath("//input[@id='last_name']"));
-        passwordElementi.sendKeys("ali" + Keys.ENTER);
+        city.sendKeys("ali" + Keys.ENTER);
+        WebElement zipcode= driver.findElement(By.xpath("//input[@id='last_name']"));
+        zipcode.sendKeys("ali" + Keys.ENTER);
         WebElement mobileNumber= driver.findElement(By.xpath("//input[@id='last_name']"));
-        passwordElementi.sendKeys("ali" + Keys.ENTER);
+        mobileNumber.sendKeys("ali" + Keys.ENTER);
 
         //13. Click 'Create Account button'
 
@@ -121,7 +121,7 @@ public class Ex_01 {
     }
     @After
     public void teardown(){
-        //  driver.close();
+        driver.close();
     }
 
 }

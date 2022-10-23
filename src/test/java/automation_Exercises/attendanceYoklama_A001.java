@@ -1,4 +1,4 @@
-package Automation_Exercises;
+package automation_Exercises;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;

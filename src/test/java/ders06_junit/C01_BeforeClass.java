@@ -1,14 +1,14 @@
 package ders06_junit;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
 import java.time.Duration;
 
@@ -41,7 +41,8 @@ public class C01_BeforeClass {
         driver.get("https://www.amazon.com");
         WebElement aramaKutusu= driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
-        WebElement aramaSonucElementi= driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
+        WebElement aramaSonucElementi= driver.findElement(By.xpath
+                ("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
         System.out.println(aramaSonucElementi.getText());
     }
     @Test
@@ -49,7 +50,8 @@ public class C01_BeforeClass {
         driver.get("https://www.amazon.com");
         WebElement aramaKutusu= driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("Java" + Keys.ENTER);
-        WebElement aramaSonucElementi= driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
+        WebElement aramaSonucElementi= driver.findElement(By.xpath
+                ("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
         System.out.println(aramaSonucElementi.getText());
     }
     @Test
@@ -57,7 +59,8 @@ public class C01_BeforeClass {
         driver.get("https://www.amazon.com");
         WebElement aramaKutusu= driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("Selenium" + Keys.ENTER);
-        WebElement aramaSonucElementi= driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
+        WebElement aramaSonucElementi= driver.findElement(By.xpath
+                ("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
         System.out.println(aramaSonucElementi.getText());
     }
 

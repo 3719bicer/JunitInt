@@ -29,13 +29,16 @@ public class C03_CheckBox {
         //  a. Verilen web sayfasına gidin.
         //     https://the-internet.herokuapp.com/checkboxes
         driver.get("https://the-internet.herokuapp.com/checkboxes");
+
         //  b. Checkbox1 ve checkbox2 elementlerini locate edin.
         WebElement checkBox1= driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
         WebElement checkBox2= driver.findElement(By.xpath("(//input[@type='checkbox'])[2]"));
+
         //  c. Checkbox1 seçili değilse onay kutusunu tıklayın
         if (!checkBox1.isSelected()){
             checkBox1.click();
         }
+
         //  d. Checkbox2 seçili değilse onay kutusunu tıklayın
         if (!checkBox2.isSelected()){
             checkBox2.click();
@@ -44,8 +47,6 @@ public class C03_CheckBox {
     }
     @After
     public void teardown(){
-
         driver.close();
-
     }
 }
