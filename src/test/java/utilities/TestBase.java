@@ -26,7 +26,7 @@ public class TestBase {
 
     @AfterClass
     public static void tearDown(){
-        //driver.quit();
+        driver.quit();
     }
 
     public static void bekle(int beklencekSaniye) {
