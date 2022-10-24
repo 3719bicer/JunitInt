@@ -19,35 +19,19 @@ public class C02_FileDownloadTesti extends TestBase {
     @Test
     public void Test01(){
 
-        //Tests packagenin altina bir class oluşturun : C05_UploadFile
-        //https://the-internet.herokuapp.com/upload adresine gidelim
-        driver.get("https://the-internet.herokuapp.com/upload");
+        //1. Tests packagenin altina bir class oluşturalim : C04_FileDownload
+        //2. https://the-internet.herokuapp.com/download adresine gidelim.
+        driver.get("https://the-internet.herokuapp.com/download");
 
-        //chooseFile butonuna basalim
-        //Yuklemek istediginiz dosyayi secelim.
-        WebElement dosyaSecButonu= driver.findElement(By.id("file-upload"));
+        //3. logo.png dosyasını indirelim
+        driver.findElement(By.xpath("//*[text()='logo.png']")).click();
 
-        /*
-          dosya sec butonuna bastiktan sonra
-          bilgisayardan selenium ile dosya secmemiz mumkun degil
-          onun yerine
-          dosyaSecButonu.sendKeys("DosyaYolu") yaparsak
-          dosya secme islemi yapilmis olacaktir
-         */
-
-        String yuklenecekDosyaYolu= System.getProperty("user.home") +
-                "/Desktop/FileTesti/deneme.txt";
-
-        //    "/Users/ahmetbulutluoz/Desktop/FileTesti/deneme.txt"
-        dosyaSecButonu.sendKeys(yuklenecekDosyaYolu);
+        //4. Dosyanın başarıyla indirilip indirilmediğini test edelim
         bekle(5);
+        String dosyaYolu= System.getProperty("user.home")+ "/Downloads/logo.png";
 
-        //Upload butonuna basalim.
-        driver.findElement(By.id("file-submit")).click();
+        // String dosyaYolu= "/Users/ahmetbulutluoz/Downloads/logo.png";
+        Assert.assertTrue(Files.exists(Paths.get(dosyaYolu)));
 
-        //“File Uploaded!” textinin goruntulendigini test edelim.
-        bekle(5);
-        WebElement fileUploadYazielementi= driver.findElement(By.tagName("h3"));
-        Assert.assertTrue(fileUploadYazielementi.isDisplayed());
     }
 }
