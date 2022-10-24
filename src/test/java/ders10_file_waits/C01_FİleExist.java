@@ -25,7 +25,7 @@ public class C01_FİleExist {
 
         /*
           System.getProperty("user.home") tum bilgisayarlarda
-          kullaniciya kadar olan path'i verir
+          kullaniciya kadar olan path'i verir.
           ve bu kisim her bilgisayar ve her kullanici icin farklidir
           user.home'dan sonrasi tum kullanicilar ortak olabilir
           ornegin tum kullanicilarin masaustu
@@ -35,6 +35,7 @@ public class C01_FİleExist {
           eger birden fazla bilgisayarda file ile ilgili bir test yapacaksaniz
           dosya yolunu dinamik olarak olusturmaniz gerekir
          */
+
         // dinamik dosya yolu olusturma
         // masa ustunde FileTesti diye bir klasor ve onun altinda deneme diye bir text dosyasi icin
 
