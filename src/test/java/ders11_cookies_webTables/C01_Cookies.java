@@ -1,4 +1,4 @@
-package ders05_Notatins.ders11_cookies_webTables;
+package ders11_cookies_webTables;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
