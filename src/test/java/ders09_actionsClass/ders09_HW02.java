@@ -1,6 +1,6 @@
 package ders09_actionsClass;
 
-public class HW_02 {
+public class ders09_HW02 {
 
     //1- Bir Class olusturalim KeyboardActions2
     //2- https://html.com/tags/iframe/ sayfasina gidelim

@@ -23,23 +23,7 @@ public class C02_MouseActions extends TestBase{
     @Test
     public void Test01() throws InterruptedException {
 
-        //1- Yeni bir class olusturalim: MouseActions2
-        //2- "https://the-internet.herokuapp.com/context_menu" sitesine gidelim
-        driver.get("https://the-internet.herokuapp.com/context_menu");
 
-        //3- Cizili alan uzerinde sag click yapalim
-
-        //4- Alert’te cikan yazinin “You selected a context menu” oldugunu
-        //   test edelim.
-
-        //5- Tamam diyerek alert’i kapatalim
-
-        //6- Elemental Selenium linkine tiklayalim
-
-        //7- Acilan sayfada h1 taginda “Elemental Selenium” yazdigini test edelim
-
-
-       /*
        //1- Yeni bir class olusturalim: MouseActions1
         //2- https://the-internet.herokuapp.com/context_menu sitesine gidelim
         driver.get("https://the-internet.herokuapp.com/context_menu");
@@ -84,7 +68,6 @@ public class C02_MouseActions extends TestBase{
         String actualTagYazisi= h1TagElementi.getText();
         Assert.assertEquals(expectedTagYazisi,actualTagYazisi);
         Thread.sleep(5000);
-        */
 
         /*
         ● Bazen bir butona tıkladığımızda, başka bir sekmede(tab) yeni bir pencere açılır.

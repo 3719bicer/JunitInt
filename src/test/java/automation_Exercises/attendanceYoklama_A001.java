@@ -13,10 +13,10 @@ import java.time.Duration;
 
 public class attendanceYoklama_A001 {
 
-    WebDriver driver;
+    static WebDriver driver;
 
     @BeforeClass
-    public void setUp(){
+    public static void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -37,16 +37,16 @@ public class attendanceYoklama_A001 {
         driver.get("https://docs.google.com/forms/d/e/1FAIpQLSd5_I3e-wir0s68TFyY3Cj3Th4vjusJ4xv1aUET0Y4i-sY9cQ/viewform");
         Thread.sleep(1000);
         WebElement adSoyad=driver.findElement(By.xpath("//input[@type=\"text\"][1]"));
-        adSoyad.sendKeys("Nevzat Celik");
-        Thread.sleep(1000);
+        adSoyad.sendKeys("Veli Biçer");
+        Thread.sleep(2000);
 
         WebElement mail= driver.findElement(By.xpath("//input[@aria-labelledby='i5']"));
-        mail.sendKeys("nevzatcelik151907@gmail.com");
-        Thread.sleep(1500);
+        mail.sendKeys("vvelibicerr@gmail.com");
+        Thread.sleep(2000);
 
         WebElement derseKatildim=driver.findElement(By.xpath("//div[@class='AB7Lab Id5V1'][1]"));
         derseKatildim.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         WebElement gonder= driver.findElement(By.xpath("//*[@id=\"mG61Hd\"]/div[2]/div/div[3]/div[1]/div[1]/div/span/span"));
         gonder.click();

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
-public class HW_01 extends TestBase {
+public class ders09_HW01 extends TestBase {
 
     //Yeni Class olusturun ActionsClassHomeWork
     //1- “http://webdriveruniversity.com/Actions” sayfasina gidin

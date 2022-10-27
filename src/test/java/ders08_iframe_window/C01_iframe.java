@@ -55,6 +55,7 @@ public class C01_iframe {
                 seceneklerinden biri ile switchto( ). frame( ) method'u kullanilir
          */
 
+
         WebElement iframeElementi= driver.findElement(By.xpath("//iframe[@id='mce_0_ifr']"));
         driver.switchTo().frame(iframeElementi);
         WebElement yaziAlaniElementi= driver.findElement(By.xpath("//body[@id='tinymce']"));

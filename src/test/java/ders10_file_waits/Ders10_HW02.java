@@ -1,9 +1,12 @@
 package ders10_file_waits;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
+
+import static org.junit.Assert.*;
 
 public class Ders10_HW02 extends TestBase {
 
@@ -16,32 +19,44 @@ public class Ders10_HW02 extends TestBase {
     //7."http://webdriveruniversity.com/index.html" adresine gittigini test edin.
 
     @Test
-    public void Test(){
-        //1."http://webdriveruniversity.com/IFrame/index.html" sayfasina gidin.
+    public void iframeTest01(){
+
+        //1.“http://webdriveruniversity.com/IFrame/index.html” sayfasina gidin.
         driver.get("http://webdriveruniversity.com/IFrame/index.html");
 
         //2.“Our Products” butonuna basin.
-        WebElement iframeElement=driver.findElement(By.xpath("//iframe[@id='frame']"));
-        driver.switchTo().frame(iframeElement);
-        WebElement ourProductsButton=driver.findElement(By.xpath("//*[text()='Our Products']"));
-        bekle(3000);
+        WebElement frameElement=driver.findElement(By.xpath("//iframe[@id='frame']"));
+        driver.switchTo().frame(frameElement);
+        WebElement ourProductButton=driver.findElement(By.xpath("//*[text()='Our Products']"));
+        ourProductButton.click();
+        bekle(3);
 
         //3.“Cameras product”i tiklayin.
-        WebElement camerasProductButtun= driver.findElement(By.xpath("//p[text()='Cameras']"));
-
-        bekle(3000);
+        driver.findElement(By.xpath("//*[text()='Cameras']"))
+                .click();
+        bekle(3);
 
         //4.Popup mesajini yazdirin.
-        System.out.println(driver.switchTo().alert().getText());
-        bekle(3000);
+        WebElement popUpTex= driver.findElement(By.xpath("//div[@class='modal-body']"));
+        System.out.println(popUpTex.getText());
+        bekle(3);
 
         //5.“close” butonuna basin.
-        driver.switchTo().alert().accept();
-        bekle(3000);
+        WebElement closeButton=driver.findElement(By.xpath("//*[text()='Close']"));
+        closeButton.click();
+        bekle(3);
 
         //6."WebdriverUniversity.com (IFrame)" linkini tiklayin.
+        driver.switchTo().parentFrame();
+        WebElement frameLink= driver.findElement(By.xpath("//*[text()='WebdriverUniversity.com (IFrame)']"));
+        frameLink.click();
+        bekle(3);
 
         //7."http://webdriveruniversity.com/index.html" adresine gittigini test edin.
+        String expectedUrl="http://webdriveruniversity.com/index.html";
+        String actualUrl=driver.getCurrentUrl();
+        assertEquals(expectedUrl,actualUrl);
+        bekle(3);
 
     }
 }

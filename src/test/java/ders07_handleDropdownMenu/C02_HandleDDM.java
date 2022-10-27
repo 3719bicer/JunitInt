@@ -31,12 +31,16 @@ public class C02_HandleDDM {
         driver.get("https://www.amazon.com");
         WebElement dropdownElement= driver.findElement(By.id("searchDropdownBox"));
         Select select= new Select(dropdownElement);
-        List<WebElement> optionListesi= select.getOptions(); // webelementlerden olusan bir liste döndürür
+
+        List<WebElement> optionListesi= select.getOptions();
+        // webelementlerden olusan bir liste döndürür
+
         // tum option'lari yazdiralim
         for (WebElement eachWebElement: optionListesi
         ) {
             System.out.println(eachWebElement.getText());
         }
+
         // arama kutusunun solundaki DDM'deki option sayisinin 27 oldugunu test edin
         Assert.assertEquals(27,optionListesi.size());
     }
