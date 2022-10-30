@@ -18,12 +18,17 @@ public class C03_WebTables extends TestBase {
 
         // 2- en altdaki web table'dan home service secenegini tiklayin.
         driver.findElement(By.xpath("//table//tr[3]//td[5]")).click();
+        /*
+        * /  tek slash  : child'ına bakar
+        * // çift slash : child'ının child'ına da bakar.
+        */
 
         // 3- ilgili sayfaya gittigini test edin.
-        WebElement baslikYaziElementi= driver.findElement(By.xpath("//img[@alt='Amazon Home Services']"));
+        WebElement baslikYaziElementi= driver.findElement(
+                By.xpath("//img[@alt='Amazon Home Services']"));
 
         Assert.assertTrue(baslikYaziElementi.isDisplayed());
-        bekle(5);
+        wait(3);
 
 
         // tum tablo body'sinde care kelimesi gecmedigini test edin

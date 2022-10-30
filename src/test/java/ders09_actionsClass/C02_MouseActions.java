@@ -9,6 +9,8 @@ import utilities.TestBase;
 
 import java.util.Set;
 
+import static org.junit.Assert.*;
+
 public class C02_MouseActions extends TestBase{
 
     //1- Yeni bir class olusturalim: MouseActions2
@@ -21,10 +23,65 @@ public class C02_MouseActions extends TestBase{
     //7- Acilan sayfada h1 taginda “Elemental Selenium” yazdigini test edelim
 
     @Test
-    public void Test01() throws InterruptedException {
+    public void TestMouseAction01() throws InterruptedException {
+
+        //1- Yeni bir class olusturalim: MouseActions2.
+        //2- "https://the-internet.herokuapp.com/context_menu" sitesine gidelim.
+        driver.get("https://the-internet.herokuapp.com/context_menu");
+        wait(3);
+        //3- Cizili alan uzerinde sag click yapalim.
+        Actions actions=new Actions(driver);
+        WebElement cizgiliAlanClick= driver.findElement(
+                By.xpath("//div[@id='hot-spot']"));
+        System.out.println("" + cizgiliAlanClick);
+
+        actions.contextClick(cizgiliAlanClick).perform();
+        wait(3);
+
+        //4- Alert’te cikan yazinin “You selected a context menu” oldugunu
+        //   test edelim.
+        System.out.println("Alert text : " + driver.switchTo().alert().getText());
+        wait(3);
+
+        String expAlertText="You selected a context menu";
+        String actAlertText=driver.switchTo().alert().getText();
+
+        assertEquals(expAlertText,actAlertText);
+        wait(3);
+
+        //5- Tamam diyerek alert’i kapatalim.
+        driver.switchTo().alert().accept();
+        wait(3);
+        //System.out.println("1.Sayfa Handle Degeri : "+ driver.getWindowHandle());
+
+        //6- Elemental Selenium linkine tiklayalim.
+        driver.findElement(By.linkText("Elemental Selenium")).click();
+        wait(5);
+        //Link tıklayarak bir sayfaya gidiyorsak driver otomatik olarak o sayfaya GİTMEZ.
+
+        //7- Acilan sayfada h1 taginda “Elemental Selenium” yazdigini test edelim.
+        // once driver'i 2.sayfaya gecirmeliyiz,
+        // bunun icin de 2.sayfanin handle degerini bulmaliyiz.
+        Set<String> handleDegerlerSeti=driver.getWindowHandles();
+        String ikinciSayfaWindowsHandleDegeri="";
+
+        for (String eachHandleDeger:handleDegerlerSeti
+             ) {
+            if(!handleDegerlerSeti.equals(ikinciSayfaWindowsHandleDegeri)){
+                ikinciSayfaWindowsHandleDegeri=eachHandleDeger;
+            }
+        }
+        //System.out.println("2.Sayfa Handle Degeri : "+ikinciSayfaWindowsHandleDegeri);
+        driver.switchTo().window(ikinciSayfaWindowsHandleDegeri);
+
+        WebElement h1TagName=driver.findElement(By.tagName("h1"));
+        String expTagYazı="Elemental Selenium";
+        String actTagYazı=h1TagName.getText();
+        Assert.assertEquals(expTagYazı,actTagYazı);
+        wait(3);
 
 
-       //1- Yeni bir class olusturalim: MouseActions1
+        /*//1- Yeni bir class olusturalim: MouseActions1
         //2- https://the-internet.herokuapp.com/context_menu sitesine gidelim
         driver.get("https://the-internet.herokuapp.com/context_menu");
 
@@ -47,12 +104,14 @@ public class C02_MouseActions extends TestBase{
         driver.switchTo().alert().accept();
 
         //6- Elemental Selenium linkine tiklayalim
-        String ilkSayfahandleDegeri= driver.getWindowHandle();
-        System.out.println("1.Sayfa HANDLE degeri :" + ilkSayfahandleDegeri);
+        //String ilkSayfahandleDegeri= driver.getWindowHandle();
+        //System.out.println("1.Sayfa HANDLE degeri :" + ilkSayfahandleDegeri);
         driver.findElement(By.xpath("//*[text()='Elemental Selenium']")).click();
 
         //7- Acilan sayfada h1 taginda “Elemental Selenium” yazdigini test edelim
-        // once driver'i 2.sayfaya gecirmeliyiz, bunun icin de 2.sayfanin handle degerini bulmaliyiz
+        // once driver'i 2.sayfaya gecirmeliyiz,
+        // bunun icin de 2.sayfanin handle degerini bulmaliyiz.
+
         Set<String > handleDegerlerSeti= driver.getWindowHandles();
         String ikinciSayfaHandleDegeri="";
 
@@ -67,7 +126,7 @@ public class C02_MouseActions extends TestBase{
         String expectedTagYazisi="Elemental Selenium";
         String actualTagYazisi= h1TagElementi.getText();
         Assert.assertEquals(expectedTagYazisi,actualTagYazisi);
-        Thread.sleep(5000);
+        Thread.sleep(5000);*/
 
         /*
         ● Bazen bir butona tıkladığımızda, başka bir sekmede(tab) yeni bir pencere açılır.

@@ -49,14 +49,14 @@ public class Ex_03 extends TestBase {
         String dosyaYolu=System.getProperty("user.home")+ "\\Downloads\\Deneme.txt";
 
         upLoad.sendKeys(dosyaYolu);
-        bekle(3);
+        wait(3);
         Actions actions=new Actions(driver);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         //  8. Click 'Submit' button
         WebElement submitButtonu= driver.findElement(By.xpath("//input[@name='submit']"));
         submitButtonu.click();
-        bekle(5);
+        wait(5);
 
         //  9. Click OK button
         System.out.println(driver.switchTo().alert().getText());
@@ -68,7 +68,7 @@ public class Ex_03 extends TestBase {
         //  11. Click 'Home' button and verify that landed to home page successfully
         driver.findElement(By.xpath("//div[@class='status alert alert-success']")).isDisplayed();
         driver.findElement(By.xpath("//span[text()=' Home']")).click();
-        bekle(2);
+        wait(2);
 
         //  pageHomeVisibele.isDisplayed();    Bu adres ve yolu normalde sayfa ilk acildiginda da ,
         //  testin sonunda da ayni olmasina ragmen dogrulamayi yapmadi ve test FILED oldu.
@@ -105,14 +105,14 @@ public class Ex_03 extends TestBase {
         String dosyaYolu=System.getProperty("user.home")+ "\\Downloads\\Deneme.txt";
 
         upLoad.sendKeys(dosyaYolu);
-        bekle(3);
+        wait(3);
         Actions actions=new Actions(driver);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         //  8. Click 'Submit' button
         WebElement submit = driver.findElement(By.xpath("//input[@type='submit']"));
         submit.click();
-        bekle(3);
+        wait(3);
 
         //  9. Click OK button
         driver.switchTo().alert().accept();
@@ -130,7 +130,7 @@ public class Ex_03 extends TestBase {
 
         driver.findElement(By.xpath("//div[@class='status alert alert-success']")).isDisplayed();
         driver.findElement(By.xpath("//span[text()=' Home']")).click();
-        bekle(2);
+        wait(2);
 
         //  pageHomeVisibele.isDisplayed();    Bu adres ve yolu normalde sayfa ilk acildiginda da ,
         //  testin sonunda da ayni olmasina ragmen dogrulamayi yapmadi ve test FILED oldu.

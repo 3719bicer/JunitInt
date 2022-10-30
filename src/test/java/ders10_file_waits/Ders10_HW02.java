@@ -29,34 +29,34 @@ public class Ders10_HW02 extends TestBase {
         driver.switchTo().frame(frameElement);
         WebElement ourProductButton=driver.findElement(By.xpath("//*[text()='Our Products']"));
         ourProductButton.click();
-        bekle(3);
+        wait(3);
 
         //3.“Cameras product”i tiklayin.
         driver.findElement(By.xpath("//*[text()='Cameras']"))
                 .click();
-        bekle(3);
+        wait(3);
 
         //4.Popup mesajini yazdirin.
         WebElement popUpTex= driver.findElement(By.xpath("//div[@class='modal-body']"));
         System.out.println(popUpTex.getText());
-        bekle(3);
+        wait(3);
 
         //5.“close” butonuna basin.
         WebElement closeButton=driver.findElement(By.xpath("//*[text()='Close']"));
         closeButton.click();
-        bekle(3);
+        wait(3);
 
         //6."WebdriverUniversity.com (IFrame)" linkini tiklayin.
         driver.switchTo().parentFrame();
         WebElement frameLink= driver.findElement(By.xpath("//*[text()='WebdriverUniversity.com (IFrame)']"));
         frameLink.click();
-        bekle(3);
+        wait(3);
 
         //7."http://webdriveruniversity.com/index.html" adresine gittigini test edin.
         String expectedUrl="http://webdriveruniversity.com/index.html";
         String actualUrl=driver.getCurrentUrl();
         assertEquals(expectedUrl,actualUrl);
-        bekle(3);
+        wait(3);
 
     }
 }

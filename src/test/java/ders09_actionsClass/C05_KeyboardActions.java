@@ -10,7 +10,7 @@ import utilities.TestBase;
 public class C05_KeyboardActions extends TestBase {
 
     @Test
-    public void Test01(){
+    public void KeyboardActionsTest01(){
 
         /*
           Klavye'de cok fazla tus olsa da her bir tusla ilgili temel iki islem var
@@ -37,10 +37,11 @@ public class C05_KeyboardActions extends TestBase {
         driver.navigate().back();
          */
 
+        /*
         // arama kutusuna actions class'ini kullanarak SamsungA71 yazdirin
         WebElement aramaKutusu= driver.findElement(By.id("twotabsearchtextbox"));
         Actions actions=new Actions(driver);
-        bekle(2);
+        wait(3);
         actions.click(aramaKutusu)
                 .keyDown(Keys.SHIFT)
                 .sendKeys("s")
@@ -52,7 +53,26 @@ public class C05_KeyboardActions extends TestBase {
                 .sendKeys("71")
                 .sendKeys(Keys.ENTER)
                 .perform();
-        bekle(5);
+        wait(3);
+        */
+
+        // arama kutusuna actions class'ini kullanarak SamsungA71 yazdirin
+        WebElement searchButton= driver.findElement(By.id("twotabsearchtextbox"));
+        searchButton.click();
+        wait(3);
+
+        Actions actions= new Actions(driver);
+        actions.keyDown(Keys.SHIFT)
+                .sendKeys("s")
+                .keyUp(Keys.SHIFT)
+                .sendKeys("amsung")
+                .keyDown(Keys.SHIFT)
+                .sendKeys("a")
+                .keyUp(Keys.SHIFT)
+                .sendKeys("71")
+                .sendKeys(Keys.ENTER)
+                .perform();
+        wait(3);
 
     }
 }

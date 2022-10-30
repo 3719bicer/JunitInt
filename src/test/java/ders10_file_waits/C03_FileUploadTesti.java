@@ -37,13 +37,13 @@ public class C03_FileUploadTesti extends TestBase {
                 "/Desktop/FileTesti/deneme.txt";
         //    "/Users/ahmetbulutluoz/Desktop/FileTesti/deneme.txt"
         dosyaSecButonu.sendKeys(yuklenecekDosyaYolu);
-        bekle(5);
+        wait(5);
 
         //5.Upload butonuna basalim.
         driver.findElement(By.id("file-submit")).click();
 
         //6.“File Uploaded!” textinin goruntulendigini test edelim.
-        bekle(5);
+        wait(5);
         WebElement fileUploadYazielementi= driver.findElement(By.tagName("h3"));
         Assert.assertTrue(fileUploadYazielementi.isDisplayed());
 

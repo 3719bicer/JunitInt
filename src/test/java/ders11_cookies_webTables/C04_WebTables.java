@@ -29,11 +29,13 @@ public class C04_WebTables extends TestBase {
         Assert.assertTrue(satirlarListesi.size()==10);
 
         //3- sutun sayisinin 13 oldugunu test edin.
-        List<WebElement> ilkSatirDataListesi = driver.findElements(By.xpath("//table//tr[1]/td"));
+        List<WebElement> ilkSatirDataListesi = driver.findElements(
+                By.xpath("//table//tr[1]/td"));
         Assert.assertTrue(ilkSatirDataListesi.size()==14);
 
         //4- 3. sutunu yazdirin.
-        List<WebElement> ucuncuSutunDataListesi = driver.findElements(By.xpath("//table//tr/td[3]"));
+        List<WebElement> ucuncuSutunDataListesi = driver.findElements(
+                By.xpath("//table//tr/td[3]"));
         for (WebElement each: ucuncuSutunDataListesi
         ) {
             System.out.println(each.getText());
@@ -41,14 +43,16 @@ public class C04_WebTables extends TestBase {
 
         //5- 5.satiri yazdirin.
         System.out.println("==============");
-        List<WebElement> besinciSatirDataListesi = driver.findElements(By.xpath("//table//tr[5]"));
+        List<WebElement> besinciSatirDataListesi = driver.findElements(
+                By.xpath("//table//tr[5]"));
         for (WebElement each: besinciSatirDataListesi
         ) {
             System.out.println(each.getText());
         }
 
         //6- 3.satir, 5.sutundaki basligin Home Service oldugunu test edin.
-        WebElement ucuncuSatirBesinciSutun= driver.findElement(By.xpath("//table//tr[3]/td[5]"));
+        WebElement ucuncuSatirBesinciSutun= driver.findElement(
+                By.xpath("//table//tr[3]/td[5]"));
         String expectedIcerik="Home Service";
         String actualData=ucuncuSatirBesinciSutun.getText();
         Assert.assertTrue(actualData.contains(expectedIcerik));
@@ -56,7 +60,7 @@ public class C04_WebTables extends TestBase {
         //7- satir ve sutun degerlerini verdigimizde
         //   tablodaki o bolumu yazdiracak bir method olusturun.
         dataYazdir(5,5);
-        bekle(5);
+        wait(3);
     }
     public void dataYazdir(int satir, int sutun) {
         String dataXpathi= "//table//tr["+satir+"]/td["+sutun+"]";

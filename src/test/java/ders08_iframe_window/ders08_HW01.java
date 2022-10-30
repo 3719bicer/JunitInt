@@ -32,12 +32,12 @@ public class ders08_HW01 extends TestBase {
         WebElement iframe1= driver.findElement(By.xpath("//iframe[@wmode='transparent']"));
         driver.switchTo().frame(iframe1);
         System.out.println(iframe1);
-        bekle(3);
+        wait(3);
 
         //driver.switchTo().frame(frameElementsList.get(0));
         driver.findElement(By.xpath("//button[@aria-label='Oynat']"))
                 .click();
-        bekle(3);
+        wait(3);
 
         //4) ilk iframe’den çıkıp ana sayfaya dönünüz.
         driver.switchTo().defaultContent();
@@ -50,7 +50,7 @@ public class ders08_HW01 extends TestBase {
         System.out.println(iframe2);
 
         driver.findElement(By.xpath("//a[@href='http://www.guru99.com/live-selenium-project.html']"));
-        bekle(3);
+        wait(3);
 
     }
 

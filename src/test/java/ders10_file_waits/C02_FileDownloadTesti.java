@@ -27,7 +27,7 @@ public class C02_FileDownloadTesti extends TestBase {
         driver.findElement(By.xpath("//*[text()='logo.png']")).click();
 
         //4. Dosyanın başarıyla indirilip indirilmediğini test edelim
-        bekle(5);
+        wait(5);
         String dosyaYolu= System.getProperty("user.home")+ "/Downloads/logo.png";
 
         // String dosyaYolu= "/Users/ahmetbulutluoz/Downloads/logo.png";

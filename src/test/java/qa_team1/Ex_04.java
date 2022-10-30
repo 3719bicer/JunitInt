@@ -18,29 +18,29 @@ public class Ex_04 extends TestBase {
         driver.switchTo().frame(iframeElement);
         WebElement ourProductsButton=driver.findElement(By.xpath("//*[text()='Our Products']"));
         ourProductsButton.click();
-        bekle(3);
+        wait(3);
 
         //3.“Cameras product”i tiklayin.
         //WebElement iframeElement2=driver.findElement(By.xpath("//iframe[@id='frame']"));
         //driver.switchTo().frame(iframeElement2);
         driver.findElement(By.xpath("//*[text()='Cameras']")).click();
-        bekle(3);
+        wait(3);
 
         //4.Popup mesajini yazdirin.
         driver.switchTo().parentFrame();
         WebElement popUpText= driver.findElement(By.xpath("//h4[@class='modal-title']"));
         //System.out.println(driver.switchTo().alert().getText());
-        bekle(3);
+        wait(3);
 
         //5.“close” butonuna basin.
         driver.switchTo().alert().accept();
         //driver.findElement(By.xpath("//*[text()='Close']")).click();
-        bekle(3);
+        wait(3);
 
         //6."WebdriverUniversity.com (IFrame)" linkini tiklayin.
         driver.switchTo().parentFrame();
         driver.findElement(By.xpath("//*[text()='WebdriverUniversity.com (IFrame)']")).click();
-        bekle(3);
+        wait(3);
 
         //7."http://webdriveruniversity.com/index.html" adresine gittigini test edin.
         String expextedUrl="http://webdriveruniversity.com/index.html";

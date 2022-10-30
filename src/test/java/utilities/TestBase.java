@@ -29,11 +29,13 @@ public class TestBase {
         driver.quit();
     }
 
-    public static void bekle(int beklencekSaniye) {
-        try{
+    public static void wait(int beklencekSaniye) {
+
+        try {
             Thread.sleep(beklencekSaniye*1000);
-        } catch (InterruptedException e){
-            throw new RuntimeException();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
+
     }
 }

@@ -3,6 +3,7 @@ package ders09_actionsClass;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
@@ -11,11 +12,12 @@ public class C03_DrugAndDrop extends TestBase {
 
     //Yeni bir class olusturalim: MouseActions2
     //1- https://demoqa.com/droppable adresine gidelim
-    //2- “Drag me” butonunu tutup “Drop here” kutusunun ustune birakalim
-    //3- “Drop here” yazisi yerine “Dropped!” oldugunu test edin
+    //2- “Drag me” butonunu tutup “Drop here” kutusunun ustune birakalim.
+    //3- “Drop here” yazisi yerine “Dropped!” oldugunu test edin.
 
     @Test
     public void Test01() throws InterruptedException {
+
         //Yeni bir class olusturalim: MouseActions2
         //1- https://demoqa.com/droppable adresine gidelim.
         driver.get("https://demoqa.com/droppable");
@@ -32,5 +34,6 @@ public class C03_DrugAndDrop extends TestBase {
         String actualDroppedYazisi=droppedYaziElementi.getText();
         Assert.assertEquals(expectedDroppedYazisi,actualDroppedYazisi);
         Thread.sleep(5000);
+
     }
 }

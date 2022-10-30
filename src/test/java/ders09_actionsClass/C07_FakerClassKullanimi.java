@@ -59,7 +59,7 @@ public class C07_FakerClassKullanimi extends TestBase {
                 .perform();
 
         //4- Kaydol tusuna basalim
-        bekle(25);
+        wait(25);
     }
 
 

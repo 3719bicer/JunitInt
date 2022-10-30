@@ -8,15 +8,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utilities.TestBase;
 
 import java.time.Duration;
 
-public class attendanceYoklama_A001 {
+public class attendanceYoklama_A001 extends TestBase {
 
     static WebDriver driver;
 
     @BeforeClass
-    public static void setUp(){
+    public static void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -51,6 +52,11 @@ public class attendanceYoklama_A001 {
         WebElement gonder= driver.findElement(By.xpath("//*[@id=\"mG61Hd\"]/div[2]/div/div[3]/div[1]/div[1]/div/span/span"));
         gonder.click();
         Thread.sleep(3000);
+
+        WebElement yoklamaSonuc= driver.findElement(
+                By.xpath("//div[@class='vHW8K']"));
+        System.out.println("Yoklama durumu : " + yoklamaSonuc.getText());
+        wait(3);
     }
 
     @After

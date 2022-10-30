@@ -31,6 +31,6 @@ public class C01_Cookies extends TestBase {
         ) {
             System.out.println(eachCookie);
         }
-        bekle(3);
+        wait(3);
     }
 }

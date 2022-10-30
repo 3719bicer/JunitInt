@@ -25,12 +25,12 @@ public class ders09_HW01 extends TestBase {
 
         //2- "Hover over Me First" kutusunun ustune gelin.
         WebElement first=driver.findElement(By.xpath("//button[text()='Hover Over Me First!']"));
-        bekle(5);
+        wait(5);
 
         //3- Link 1" e tiklayin
         Actions actions= new Actions(driver);
         actions.moveToElement(first).click();
-        bekle(5);
+        wait(5);
 
         //4- Popup mesajini yazdirin
         //5- Popup’i tamam diyerek kapatin
