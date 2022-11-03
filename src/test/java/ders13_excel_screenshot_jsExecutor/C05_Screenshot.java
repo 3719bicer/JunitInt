@@ -23,6 +23,7 @@ public class C05_Screenshot extends TestBase {
         aramaKutusu.sendKeys("Nutella");
         webelementScreenshot(aramaKutusu);
         aramaKutusu.submit();
+
         // Aramayi yapip, sonucun nutella icerdigini test edin
         // ve sonuc yazisinin fotografini cekin
         WebElement sonucYaziElementi= driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
