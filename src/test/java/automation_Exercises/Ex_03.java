@@ -132,8 +132,9 @@ public class Ex_03 extends TestBase {
         driver.findElement(By.xpath("//span[text()=' Home']")).click();
         wait(2);
 
-        //  pageHomeVisibele.isDisplayed();    Bu adres ve yolu normalde sayfa ilk acildiginda da ,
-        //  testin sonunda da ayni olmasina ragmen dogrulamayi yapmadi ve test FILED oldu.
+        //  pageHomeVisibele.isDisplayed();
+        //  Bu adres ve yolu normalde sayfa ilk acildiginda da ,
+        //  testin sonunda da ayni olmasina ragmen dogrulamayi yapmadi ve test FaILED oldu.
         //  Asagidaki gibi yeni bir elementi Locate edip isDisplayed yaptigimizda testimiz basarili oldu.
 
         driver.findElement(By.xpath("//a[@style='color: orange;']")).isDisplayed();
