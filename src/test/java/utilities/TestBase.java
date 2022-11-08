@@ -44,6 +44,7 @@ public class TestBase {
             throw new RuntimeException(e);
         }
     }
+
     public void tumSayfaResimCek() throws IOException {
         // 1- TakesScreenShot objesi olusturup
         //    deger olarak cast ettigimiz driver'i atayalim

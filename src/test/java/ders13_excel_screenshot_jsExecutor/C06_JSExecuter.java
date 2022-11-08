@@ -14,13 +14,16 @@ public class C06_JSExecuter extends TestBase {
         driver.get("https://www.amazon.com");
 
         // sell butonuna Js executor ile basalim
-        WebElement sellLinki= driver.findElement(By.xpath("//a[text()='Sell']"));
+        WebElement sellLinki= driver.findElement(
+                By.xpath("//a[text()='Sell']"));
         JavascriptExecutor jse= (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].click();",sellLinki);
 
         // bir alert olusturup yasasinnn yazdiralim
         jse.executeScript("alert('yasasinnnn');");
-        wait(5);
+        wait(3);
+
         driver.switchTo().alert().accept();
+        wait(3);
     }
 }

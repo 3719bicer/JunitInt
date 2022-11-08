@@ -21,12 +21,14 @@ public class C02_ScreenShotTumSayfa extends TestBase {
         aramaKutusu.sendKeys("Nutella"+ Keys.ENTER);
 
         // sonuclarin Nutella icerdigini test edelim
-        WebElement sonucYaziElementi= driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
+        WebElement sonucYaziElementi= driver.findElement
+                (By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
         String expectedkelime="Nutella";
         String actualYazi= sonucYaziElementi.getText();
         Assert.assertTrue(actualYazi.contains(expectedkelime));
 
         // Tum sayfanin screenshot'ini almak icin 4 adim gerekiyor
+
         // 1- TakesScreenShot objesi olusturup
         //    deger olarak cast ettigimiz driver'i atayalim
         TakesScreenshot tss= (TakesScreenshot) driver;
@@ -39,5 +41,6 @@ public class C02_ScreenShotTumSayfa extends TestBase {
 
         // 4- gecici dosyayi hazirladigim file'a kopyalayalim
         FileUtils.copyFile(geciciResim,tumSayfaSShot);
+
     }
 }
